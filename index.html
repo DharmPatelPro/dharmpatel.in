@@ -131,6 +131,30 @@
                             <h3 class="text-lg font-bold">Consulting</h3>
                             <p class="text-gray-600 text-sm">Get expert advice on technology strategy.</p>
                         </a>
+                        
+                        <!-- Card 4 -->
+                        <a href="#sub4" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
+                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(450px) scale(0.8); z-index: 8;">
+                            <img class="rounded w-full object-cover" alt="Control" style="height: clamp(100px, 25vw, 160px);" src="https://dummyimage.com/500x400">
+                            <h3 class="text-lg font-bold">Control</h3>
+                            <p class="text-gray-600 text-sm">Control systems and automation solutions.</p>
+                        </a>
+
+                        <!-- Card 5 -->
+                        <a href="#sub5" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
+                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(-450px) scale(0.8); z-index: 6;">
+                            <img class="rounded w-full object-cover" alt="Embedded" style="height: clamp(100px, 25vw, 160px);" src="https://dummyimage.com/500x400">
+                            <h3 class="text-lg font-bold">Embedded</h3>
+                            <p class="text-gray-600 text-sm">Embedded software and firmware development.</p>
+                        </a>
+
+                        <!-- Card 6 -->
+                        <a href="#sub6" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
+                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(600px) scale(0.75); z-index: 4;">
+                            <img class="rounded w-full object-cover" alt="Design" style="height: clamp(100px, 25vw, 160px);" src="https://dummyimage.com/500x400">
+                            <h3 class="text-lg font-bold">Design</h3>
+                            <p class="text-gray-600 text-sm">UI/UX and product design services.</p>
+                        </a>
                     </div>
 
                     <!-- Nav buttons -->
@@ -166,55 +190,65 @@
             mobileSolutionsMenu.classList.toggle('hidden');
         });
 
-        // 3D Card Stack with Drag/Swipe and subtle desktop buttons
+        // 3D Card Stack with Drag/Swipe and subtle desktop buttons (dynamic card count)
         let currentCard = 0;
         let startX = 0;
         let isDragging = false;
         const cards = document.querySelectorAll('.card');
         const container = document.getElementById('cardContainer');
-        const totalCards = 3;
+        const totalCards = cards.length;
 
-        // Responsive positions (closer on desktop, smaller on mobile)
-        function getCardPositions() {
-            const isMobile = window.innerWidth < 768;
-            if (isMobile) {
-                return [
-                    { x: 0, scale: 1, opacity: 1, z: 30, rotate: 0 },
-                    { x: 50, scale: 0.80, opacity: 0.85, z: 12, rotate: -2 },
-                    { x: -50, scale: 0.80, opacity: 0.85, z: 8, rotate: 2 }
-                ];
-            }
-            return [
-                { x: 0, scale: 1, opacity: 1, z: 30, rotate: 0 },
-                { x: 120, scale: 0.90, opacity: 0.95, z: 20, rotate: -6 },
-                { x: -120, scale: 0.90, opacity: 0.95, z: 10, rotate: 6 }
-            ];
-        }
-
-        function applyShadows(card, positionIndex) {
-            if (positionIndex === 0) {
-                card.style.boxShadow = '0 20px 20px -10px rgba(0,0,0,0.2), 0 -20px 20px -10px rgba(0,0,0,0.2)';
+        function applyShadows(card, isFront) {
+            if (isFront) {
+                card.style.boxShadow = '0 12px 18px -6px rgba(0,0,0,0.18), 0 -12px 18px -6px rgba(0,0,0,0.12)';
             } else {
-                card.style.boxShadow = '0 12px 20px -5px rgba(0,0,0,0.1), 0 -12px 20px -5px rgba(0,0,0,0.1)';
+                card.style.boxShadow = '0 8px 14px -8px rgba(0,0,0,0.08), 0 -8px 14px -8px rgba(0,0,0,0.06)';
             }
         }
 
         function updateStack() {
-            const cardPositions = getCardPositions();
-            cards.forEach((card, idx) => {
-                let position = (idx - currentCard + totalCards) % totalCards;
-                let pos = cardPositions[position];
-                
-                card.style.transform = `translateX(-50%) translateY(-50%) translateX(${pos.x}px) scale(${pos.scale}) rotateY(${pos.rotate}deg)`;
-                card.style.zIndex = pos.z;
-                card.style.opacity = pos.opacity;
-                applyShadows(card, position);
-            });
+            const isMobile = window.innerWidth < 768;
+            const rightBase = isMobile ? 60 : 140; // base horizontal offset for the immediate side cards
+            const scaleStep = 0.08;
+            const zBase = 40;
 
-            // indicators removed
+            cards.forEach((card, idx) => {
+                const rel = (idx - currentCard + totalCards) % totalCards; // 0 => front, 1 => next(right), totalCards-1 => prev(left)
+                let x = 0, scale = 1, opacity = 1, z = zBase, rotate = 0;
+
+                // Only the front and immediate neighbors are prominently visible.
+                if (rel === 0) {
+                    x = 0; scale = 1; opacity = 1; z = zBase; rotate = 0;
+                    card.style.pointerEvents = 'auto';
+                } else if (rel === 1) {
+                    x = rightBase; scale = 1 - scaleStep; opacity = 0.96; z = zBase - 8; rotate = -6;
+                    card.style.pointerEvents = 'auto';
+                } else if (rel === totalCards - 1) {
+                    x = -rightBase; scale = 1 - scaleStep; opacity = 0.96; z = zBase - 12; rotate = 6;
+                    card.style.pointerEvents = 'auto';
+                } else {
+                    // All other cards should be very subtle and non-interactive.
+                    const subtleX = isMobile ? rightBase * 1.2 : rightBase * 1.5;
+                    if (rel > 1 && rel <= Math.floor(totalCards / 2)) {
+                        x = subtleX; // keep near the side but very faded
+                    } else {
+                        x = -subtleX;
+                    }
+                    scale = 0.88;
+                    opacity = 0.04;
+                    z = 1;
+                    rotate = rel > totalCards / 2 ? 8 : -8;
+                    card.style.pointerEvents = 'none';
+                }
+
+                card.style.transform = `translateX(-50%) translateY(-50%) translateX(${x}px) scale(${scale}) rotateY(${rotate}deg)`;
+                card.style.zIndex = Math.floor(z);
+                card.style.opacity = opacity;
+                applyShadows(card, rel === 0);
+            });
         }
 
-        // Drag / swipe
+        // Drag / swipe handlers
         container.addEventListener('mousedown', (e) => {
             isDragging = true;
             startX = e.clientX;
@@ -224,29 +258,21 @@
         container.addEventListener('touchstart', (e) => {
             isDragging = true;
             startX = e.touches[0].clientX;
-        });
+        }, { passive: true });
 
-        document.addEventListener('mousemove', (e) => {
+        function handlePointerMove(currentX) {
             if (!isDragging) return;
-            const diff = startX - e.clientX;
+            const diff = startX - currentX;
             if (Math.abs(diff) > 30) {
                 isDragging = false;
                 if (diff > 0) currentCard = (currentCard + 1) % totalCards;
                 else currentCard = (currentCard - 1 + totalCards) % totalCards;
                 updateStack();
             }
-        });
+        }
 
-        document.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            const diff = startX - e.touches[0].clientX;
-            if (Math.abs(diff) > 30) {
-                isDragging = false;
-                if (diff > 0) currentCard = (currentCard + 1) % totalCards;
-                else currentCard = (currentCard - 1 + totalCards) % totalCards;
-                updateStack();
-            }
-        });
+        document.addEventListener('mousemove', (e) => handlePointerMove(e.clientX));
+        document.addEventListener('touchmove', (e) => handlePointerMove(e.touches[0].clientX), { passive: true });
 
         document.addEventListener('mouseup', () => {
             isDragging = false;
@@ -270,8 +296,6 @@
             currentCard = (currentCard + 1) % totalCards;
             updateStack();
         });
-
-        // indicators removed
 
         // Update positions on resize
         window.addEventListener('resize', () => {
