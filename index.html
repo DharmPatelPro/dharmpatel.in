@@ -101,41 +101,41 @@
         </section>
 
         <!-- Solutions Card Slider -->
-        <section class="py-12 bg-gray-50">
+        <section >
             <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-5">Solutions</h2>
+                <h2 class="text-3xl font-bold text-center ">Solutions</h2>
                 
                 <!-- 3D Card Stack with Drag -->
-                <div id="cardContainer" class="flex justify-center items-center relative h-72 md:h-96 cursor-grab active:cursor-grabbing select-none overflow-visible py-8 md:py-12">
-                    <div id="cardStack" class="relative w-full h-full" style="perspective: 1000px;">
+                <div id="cardContainer" class="flex justify-center items-center relative cursor-grab active:cursor-grabbing select-none overflow-hidden" style="perspective: 1200px; min-height: 350px;">
+                    <div id="cardStack" class="relative w-full" style="perspective: 1000px;">
                         <!-- Card 1 -->
-                        <a href="#sub1" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-72 md:w-80 h-auto bg-white p-5 md:p-6 rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-3"
-                            style="transform: translateX(-50%) translateY(-50%) translateX(0px) scale(1); z-index: 30;">
-                            <img class="rounded w-full h-40 md:h-48 object-cover" alt="Web Development" src="https://dummyimage.com/500x400">
-                            <h3 class="text-lg md:text-xl font-bold">Web Development</h3>
-                            <p class="text-gray-600 text-xs md:text-sm">Build modern, responsive websites and web applications tailored to your business needs.</p>
+                        <a href="#sub1" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
+                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(0px) scale(1); z-index: 30;">
+                            <img class="rounded w-full object-cover" alt="Web Development" style="height: clamp(100px, 25vw, 160px);" src="https://dummyimage.com/500x400">
+                            <h3 class="text-lg font-bold">Web Development</h3>
+                            <p class="text-gray-600 text-sm">Build modern, responsive websites and applications.</p>
                         </a>
 
                         <!-- Card 2 -->
-                        <a href="#sub2" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-72 md:w-80 h-auto bg-white p-5 md:p-6 rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-3"
-                            style="transform: translateX(-50%) translateY(-50%) translateX(350px) scale(0.85); z-index: 20;">
-                            <img class="rounded w-full h-40 md:h-48 object-cover" alt="App Development" src="https://dummyimage.com/500x400">
-                            <h3 class="text-lg md:text-xl font-bold">App Development</h3>
-                            <p class="text-gray-600 text-xs md:text-sm">Create powerful mobile and desktop applications from iOS to Android.</p>
+                        <a href="#sub2" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
+                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(350px) scale(0.85); z-index: 20;">
+                            <img class="rounded w-full object-cover" alt="App Development" style="height: clamp(100px, 25vw, 160px);" src="https://dummyimage.com/500x400">
+                            <h3 class="text-lg font-bold">App Development</h3>
+                            <p class="text-gray-600 text-sm">Create powerful mobile and desktop applications.</p>
                         </a>
 
                         <!-- Card 3 -->
-                        <a href="#sub3" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-72 md:w-80 h-auto bg-white p-5 md:p-6 rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-3"
-                            style="transform: translateX(-50%) translateY(-50%) translateX(-350px) scale(0.85); z-index: 10;">
-                            <img class="rounded w-full h-40 md:h-48 object-cover" alt="Consulting" src="https://dummyimage.com/500x400">
-                            <h3 class="text-lg md:text-xl font-bold">Consulting</h3>
-                            <p class="text-gray-600 text-xs md:text-sm">Get expert advice on technology strategy. Transform digitally and achieve your goals.</p>
+                        <a href="#sub3" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
+                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(-350px) scale(0.85); z-index: 10;">
+                            <img class="rounded w-full object-cover" alt="Consulting" style="height: clamp(100px, 25vw, 160px);" src="https://dummyimage.com/500x400">
+                            <h3 class="text-lg font-bold">Consulting</h3>
+                            <p class="text-gray-600 text-sm">Get expert advice on technology strategy.</p>
                         </a>
                     </div>
 
-                    <!-- Subtle desktop nav buttons -->
-                    <button id="prevBtn" class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm text-black w-10 h-10 rounded-full items-center justify-center border border-gray-200 hover:scale-105 transition">&#10094;</button>
-                    <button id="nextBtn" class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm text-black w-10 h-10 rounded-full items-center justify-center border border-gray-200 hover:scale-105 transition">&#10095;</button>
+                    <!-- Nav buttons -->
+                    <button id="prevBtn" class="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm text-black rounded-full items-center justify-center border border-gray-200 hover:scale-105 transition" style="width: 40px; height: 40px; font-size: 18px;">&#10094;</button>
+                    <button id="nextBtn" class="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm text-black rounded-full items-center justify-center border border-gray-200 hover:scale-105 transition" style="width: 40px; height: 40px; font-size: 18px;">&#10095;</button>
                 </div>
 
                 
@@ -144,8 +144,8 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-100 text-gray py-1">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <footer class="bg-gray-100 text-gray py-6">
+        <div class="max-w-6xl mx-auto px-4 text-center">
             <p>&copy; 2026 Dharm Patel. All rights reserved.</p>
         </div>
     </footer>
@@ -180,8 +180,8 @@
             if (isMobile) {
                 return [
                     { x: 0, scale: 1, opacity: 1, z: 30, rotate: 0 },
-                    { x: 50, scale: 0.92, opacity: 0.8, z: 12, rotate: -3 },
-                    { x: -50, scale: 0.92, opacity: 0.8, z: 8, rotate: 3 }
+                    { x: 35, scale: 0.90, opacity: 0.75, z: 12, rotate: -2 },
+                    { x: -35, scale: 0.90, opacity: 0.75, z: 8, rotate: 2 }
                 ];
             }
             return [
@@ -193,9 +193,9 @@
 
         function applyShadows(card, positionIndex) {
             if (positionIndex === 0) {
-                card.style.boxShadow = '0 50px 100px -20px rgba(0,0,0,0.4), 0 -50px 100px -20px rgba(0,0,0,0.4)';
+                card.style.boxShadow = '0 20px 20px -10px rgba(0,0,0,0.2), 0 -20px 20px -10px rgba(0,0,0,0.2)';
             } else {
-                card.style.boxShadow = '0 25px 50px -10px rgba(0,0,0,0.2), 0 -25px 50px -10px rgba(0,0,0,0.2)';
+                card.style.boxShadow = '0 12px 20px -5px rgba(0,0,0,0.1), 0 -12px 20px -5px rgba(0,0,0,0.1)';
             }
         }
 
