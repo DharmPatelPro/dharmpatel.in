@@ -103,51 +103,33 @@
         <!-- Solutions Card Slider -->
         <section class="py-12 bg-gray-50">
             <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-12">Solutions</h2>
+                <h2 class="text-3xl font-bold text-center mb-5">Solutions</h2>
                 
                 <!-- 3D Card Stack with Drag -->
-                <div id="cardContainer" class="flex justify-center items-center relative h-72 md:h-96 cursor-grab active:cursor-grabbing select-none overflow-hidden">
+                <div id="cardContainer" class="flex justify-center items-center relative h-72 md:h-96 cursor-grab active:cursor-grabbing select-none overflow-visible py-8 md:py-12">
                     <div id="cardStack" class="relative w-full h-full" style="perspective: 1000px;">
                         <!-- Card 1 -->
-                        <a href="#sub1" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-80 h-full bg-white p-6 rounded border border-gray-200 flex flex-col gap-4 cursor-pointer shadow-2xl transition-all duration-500"
+                        <a href="#sub1" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-72 md:w-80 h-auto bg-white p-5 md:p-6 rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-3"
                             style="transform: translateX(-50%) translateY(-50%) translateX(0px) scale(1); z-index: 30;">
-                            <div class="w-full">
-                                <img class="rounded w-full h-48 object-cover" alt="Web Development" src="https://dummyimage.com/500x400">
-                            </div>
-                            <div class="w-full flex-1 flex flex-col justify-between">
-                                <div>
-                                    <h3 class="text-xl font-bold mb-2">Web Development</h3>
-                                    <p class="text-gray-600 text-sm mb-4">Build modern, responsive websites and web applications tailored to your business needs.</p>
-                                </div>
-                            </div>
+                            <img class="rounded w-full h-40 md:h-48 object-cover" alt="Web Development" src="https://dummyimage.com/500x400">
+                            <h3 class="text-lg md:text-xl font-bold">Web Development</h3>
+                            <p class="text-gray-600 text-xs md:text-sm">Build modern, responsive websites and web applications tailored to your business needs.</p>
                         </a>
 
                         <!-- Card 2 -->
-                        <a href="#sub2" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-80 h-full bg-white p-6 rounded border border-gray-200 flex flex-col gap-4 cursor-pointer shadow-lg transition-all duration-500 opacity-60"
+                        <a href="#sub2" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-72 md:w-80 h-auto bg-white p-5 md:p-6 rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-3"
                             style="transform: translateX(-50%) translateY(-50%) translateX(350px) scale(0.85); z-index: 20;">
-                            <div class="w-full">
-                                <img class="rounded w-full h-48 object-cover" alt="App Development" src="https://dummyimage.com/500x400">
-                            </div>
-                            <div class="w-full flex-1 flex flex-col justify-between">
-                                <div>
-                                    <h3 class="text-xl font-bold mb-2">App Development</h3>
-                                    <p class="text-gray-600 text-sm mb-4">Create powerful mobile and desktop applications. From iOS to Android, we deliver high-quality apps.</p>
-                                </div>
-                            </div>
+                            <img class="rounded w-full h-40 md:h-48 object-cover" alt="App Development" src="https://dummyimage.com/500x400">
+                            <h3 class="text-lg md:text-xl font-bold">App Development</h3>
+                            <p class="text-gray-600 text-xs md:text-sm">Create powerful mobile and desktop applications from iOS to Android.</p>
                         </a>
 
                         <!-- Card 3 -->
-                        <a href="#sub3" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-80 h-full bg-white p-6 rounded border border-gray-200 flex flex-col gap-4 cursor-pointer shadow-lg transition-all duration-500 opacity-60"
+                        <a href="#sub3" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-72 md:w-80 h-auto bg-white p-5 md:p-6 rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-3"
                             style="transform: translateX(-50%) translateY(-50%) translateX(-350px) scale(0.85); z-index: 10;">
-                            <div class="w-full">
-                                <img class="rounded w-full h-48 object-cover" alt="Consulting" src="https://dummyimage.com/500x400">
-                            </div>
-                            <div class="w-full flex-1 flex flex-col justify-between">
-                                <div>
-                                    <h3 class="text-xl font-bold mb-2">Consulting</h3>
-                                    <p class="text-gray-600 text-sm mb-4">Get expert advice on your technology strategy. We help businesses transform digitally.</p>
-                                </div>
-                            </div>
+                            <img class="rounded w-full h-40 md:h-48 object-cover" alt="Consulting" src="https://dummyimage.com/500x400">
+                            <h3 class="text-lg md:text-xl font-bold">Consulting</h3>
+                            <p class="text-gray-600 text-xs md:text-sm">Get expert advice on technology strategy. Transform digitally and achieve your goals.</p>
                         </a>
                     </div>
 
@@ -156,12 +138,7 @@
                     <button id="nextBtn" class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm text-black w-10 h-10 rounded-full items-center justify-center border border-gray-200 hover:scale-105 transition">&#10095;</button>
                 </div>
 
-                <!-- Indicators -->
-                <div class="flex justify-center gap-2 mt-8">
-                    <div class="indicator w-2 h-2 bg-black rounded-full cursor-pointer active-indicator"></div>
-                    <div class="indicator w-2 h-2 bg-gray-300 rounded-full cursor-pointer"></div>
-                    <div class="indicator w-2 h-2 bg-gray-300 rounded-full cursor-pointer"></div>
-                </div>
+                
             </div>
         </section>
     </main>
@@ -195,7 +172,6 @@
         let isDragging = false;
         const cards = document.querySelectorAll('.card');
         const container = document.getElementById('cardContainer');
-        const indicators = document.querySelectorAll('.indicator');
         const totalCards = 3;
 
         // Responsive positions (closer on desktop, smaller on mobile)
@@ -204,8 +180,8 @@
             if (isMobile) {
                 return [
                     { x: 0, scale: 1, opacity: 1, z: 30, rotate: 0 },
-                    { x: 70, scale: 0.98, opacity: 0.95, z: 12, rotate: -4 },
-                    { x: -70, scale: 0.98, opacity: 0.95, z: 8, rotate: 4 }
+                    { x: 50, scale: 0.92, opacity: 0.8, z: 12, rotate: -3 },
+                    { x: -50, scale: 0.92, opacity: 0.8, z: 8, rotate: 3 }
                 ];
             }
             return [
@@ -217,9 +193,9 @@
 
         function applyShadows(card, positionIndex) {
             if (positionIndex === 0) {
-                card.style.boxShadow = '0 30px 60px rgba(0,0,0,0.25)';
+                card.style.boxShadow = '0 50px 100px -20px rgba(0,0,0,0.4), 0 -50px 100px -20px rgba(0,0,0,0.4)';
             } else {
-                card.style.boxShadow = '0 12px 24px rgba(0,0,0,0.12)';
+                card.style.boxShadow = '0 25px 50px -10px rgba(0,0,0,0.2), 0 -25px 50px -10px rgba(0,0,0,0.2)';
             }
         }
 
@@ -235,11 +211,7 @@
                 applyShadows(card, position);
             });
 
-            indicators.forEach((ind, idx) => {
-                ind.classList.toggle('active-indicator', idx === currentCard);
-                ind.classList.toggle('bg-black', idx === currentCard);
-                ind.classList.toggle('bg-gray-300', idx !== currentCard);
-            });
+            // indicators removed
         }
 
         // Drag / swipe
@@ -299,12 +271,7 @@
             updateStack();
         });
 
-        indicators.forEach((ind, idx) => {
-            ind.addEventListener('click', () => {
-                currentCard = idx;
-                updateStack();
-            });
-        });
+        // indicators removed
 
         // Update positions on resize
         window.addEventListener('resize', () => {
