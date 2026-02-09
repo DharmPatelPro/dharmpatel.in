@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .card {
+            transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1), opacity 500ms cubic-bezier(0.4, 0, 0.2, 1), z-index 500ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
 
 </head>
 
@@ -93,7 +101,7 @@
                 <div class="md:w-1/2">
                     <h1 class="text-4xl font-bold mb-4">Dharm Patel</h1>
                     <p class="mb-6 text-gray-700">Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid swag typewriter affogato, hella selvage wolf narwhal dreamcatcher. Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid swag typewriter affogato, hella selvage wolf narwhal dreamcatcher.</p>
-                    <button class="bg-black text-white py-2 px-6 hover:bg-gray-800 transition rounded">Learn More</button>
+                    <a href="/about.html" class="bg-black text-white py-2 px-6 hover:bg-gray-800 transition rounded">Learn More</a>
                 </div>
                 <div class="md:w-1/2">
                     <img class="rounded" alt="hero" src="https://dummyimage.com/720x600">
@@ -169,7 +177,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-100 py-4">
+    <footer id="contact" class="bg-gray-100 py-4">
         <div class="max-w-6xl mx-auto px-4">
             <!-- Contact Section -->
             <div class="flex justify-between items-center mb-3">
