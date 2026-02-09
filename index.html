@@ -5,20 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileSolutions = document.getElementById('mobile-solutions');
-        const mobileSolutionsMenu = document.getElementById('mobile-solutions-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        mobileSolutions.addEventListener('click', () => {
-            mobileSolutionsMenu.classList.toggle('hidden');
-        });
-    </script>
+    
 </head>
 
 <body>
@@ -101,6 +88,22 @@
         </div>
     </footer>
     
+
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileSolutions = document.getElementById('mobile-solutions');
+        const mobileSolutionsMenu = document.getElementById('mobile-solutions-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileSolutions.addEventListener('click', () => {
+            mobileSolutionsMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 
 </html>
