@@ -106,10 +106,10 @@
                 <h2 class="text-3xl font-bold text-center mb-12">Solutions</h2>
                 
                 <!-- 3D Card Stack with Drag -->
-                <div id="cardContainer" class="flex justify-center items-center relative h-96 cursor-grab active:cursor-grabbing select-none">
+                <div id="cardContainer" class="flex justify-center items-center relative h-72 md:h-96 cursor-grab active:cursor-grabbing select-none overflow-hidden">
                     <div id="cardStack" class="relative w-full h-full" style="perspective: 1000px;">
                         <!-- Card 1 -->
-                        <a href="#sub1" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-80 h-full bg-white p-6 rounded border border-gray-200 flex flex-col gap-4 cursor-pointer shadow-lg transition-all duration-500"
+                        <a href="#sub1" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-80 h-full bg-white p-6 rounded border border-gray-200 flex flex-col gap-4 cursor-pointer shadow-2xl transition-all duration-500"
                             style="transform: translateX(-50%) translateY(-50%) translateX(0px) scale(1); z-index: 30;">
                             <div class="w-full">
                                 <img class="rounded w-full h-48 object-cover" alt="Web Development" src="https://dummyimage.com/500x400">
@@ -150,6 +150,10 @@
                             </div>
                         </a>
                     </div>
+
+                    <!-- Subtle desktop nav buttons -->
+                    <button id="prevBtn" class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm text-black w-10 h-10 rounded-full items-center justify-center border border-gray-200 hover:scale-105 transition">&#10094;</button>
+                    <button id="nextBtn" class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm text-black w-10 h-10 rounded-full items-center justify-center border border-gray-200 hover:scale-105 transition">&#10095;</button>
                 </div>
 
                 <!-- Indicators -->
@@ -185,7 +189,7 @@
             mobileSolutionsMenu.classList.toggle('hidden');
         });
 
-        // 3D Card Stack with Drag/Swipe
+        // 3D Card Stack with Drag/Swipe and subtle desktop buttons
         let currentCard = 0;
         let startX = 0;
         let isDragging = false;
@@ -194,20 +198,41 @@
         const indicators = document.querySelectorAll('.indicator');
         const totalCards = 3;
 
-        const cardPositions = [
-            { x: 0, scale: 1, opacity: 1, z: 30 },
-            { x: 350, scale: 0.85, opacity: 0.6, z: 20 },
-            { x: -350, scale: 0.85, opacity: 0.6, z: 10 }
-        ];
+        // Responsive positions (closer on desktop, smaller on mobile)
+        function getCardPositions() {
+            const isMobile = window.innerWidth < 768;
+            if (isMobile) {
+                return [
+                    { x: 0, scale: 1, opacity: 1, z: 30, rotate: 0 },
+                    { x: 70, scale: 0.98, opacity: 0.95, z: 12, rotate: -4 },
+                    { x: -70, scale: 0.98, opacity: 0.95, z: 8, rotate: 4 }
+                ];
+            }
+            return [
+                { x: 0, scale: 1, opacity: 1, z: 30, rotate: 0 },
+                { x: 120, scale: 0.96, opacity: 0.95, z: 20, rotate: -6 },
+                { x: -120, scale: 0.96, opacity: 0.95, z: 10, rotate: 6 }
+            ];
+        }
+
+        function applyShadows(card, positionIndex) {
+            if (positionIndex === 0) {
+                card.style.boxShadow = '0 30px 60px rgba(0,0,0,0.25)';
+            } else {
+                card.style.boxShadow = '0 12px 24px rgba(0,0,0,0.12)';
+            }
+        }
 
         function updateStack() {
+            const cardPositions = getCardPositions();
             cards.forEach((card, idx) => {
                 let position = (idx - currentCard + totalCards) % totalCards;
                 let pos = cardPositions[position];
                 
-                card.style.transform = `translateX(-50%) translateY(-50%) translateX(${pos.x}px) scale(${pos.scale})`;
+                card.style.transform = `translateX(-50%) translateY(-50%) translateX(${pos.x}px) scale(${pos.scale}) rotateY(${pos.rotate}deg)`;
                 card.style.zIndex = pos.z;
                 card.style.opacity = pos.opacity;
+                applyShadows(card, position);
             });
 
             indicators.forEach((ind, idx) => {
@@ -217,6 +242,7 @@
             });
         }
 
+        // Drag / swipe
         container.addEventListener('mousedown', (e) => {
             isDragging = true;
             startX = e.clientX;
@@ -230,30 +256,22 @@
 
         document.addEventListener('mousemove', (e) => {
             if (!isDragging) return;
-            
             const diff = startX - e.clientX;
-            if (Math.abs(diff) > 50) {
+            if (Math.abs(diff) > 30) {
                 isDragging = false;
-                if (diff > 0) {
-                    currentCard = (currentCard + 1) % totalCards;
-                } else {
-                    currentCard = (currentCard - 1 + totalCards) % totalCards;
-                }
+                if (diff > 0) currentCard = (currentCard + 1) % totalCards;
+                else currentCard = (currentCard - 1 + totalCards) % totalCards;
                 updateStack();
             }
         });
 
         document.addEventListener('touchmove', (e) => {
             if (!isDragging) return;
-            
             const diff = startX - e.touches[0].clientX;
-            if (Math.abs(diff) > 50) {
+            if (Math.abs(diff) > 30) {
                 isDragging = false;
-                if (diff > 0) {
-                    currentCard = (currentCard + 1) % totalCards;
-                } else {
-                    currentCard = (currentCard - 1 + totalCards) % totalCards;
-                }
+                if (diff > 0) currentCard = (currentCard + 1) % totalCards;
+                else currentCard = (currentCard - 1 + totalCards) % totalCards;
                 updateStack();
             }
         });
@@ -267,12 +285,34 @@
             isDragging = false;
         });
 
+        // Subtle desktop buttons
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        prevBtn && prevBtn.addEventListener('click', () => {
+            currentCard = (currentCard - 1 + totalCards) % totalCards;
+            updateStack();
+        });
+
+        nextBtn && nextBtn.addEventListener('click', () => {
+            currentCard = (currentCard + 1) % totalCards;
+            updateStack();
+        });
+
         indicators.forEach((ind, idx) => {
             ind.addEventListener('click', () => {
                 currentCard = idx;
                 updateStack();
             });
         });
+
+        // Update positions on resize
+        window.addEventListener('resize', () => {
+            updateStack();
+        });
+
+        // Initial stack layout
+        updateStack();
     </script>
 </body>
 
