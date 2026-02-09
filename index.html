@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
 </head>
 
 <body>
@@ -14,71 +14,152 @@
     <header>
         <!-- Navbar -->
         <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex-shrink-0 font-bold text-xl text-gray-900">
-                    Dharm Patel
-                </div>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
-                    
-                    <!-- Solutions Dropdown -->
-                    <div class="relative group">
-                        <button class="text-gray-700 hover:text-blue-600 transition flex items-center">
-                            Solutions
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                            </svg>
-                        </button>
-                        <div class="absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
-                            <a href="#sub1" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 first:rounded-t-md">Web Development</a>
-                            <a href="#sub2" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">App Development</a>
-                            <a href="#sub3" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 last:rounded-b-md">Consulting</a>
-                        </div>
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0 font-bold text-xl text-gray-900">
+                        Dharm Patel
                     </div>
 
-                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#home" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                        <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
+
+                        <!-- Solutions Dropdown -->
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-blue-600 transition flex items-center">
+                                Solutions
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                                </svg>
+                            </button>
+                            <div
+                                class="absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
+                                <a href="#sub1"
+                                    class="block px-4 py-2 text-gray-700 hover:bg-blue-50 first:rounded-t-md">Web
+                                    Development</a>
+                                <a href="#sub2" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">App
+                                    Development</a>
+                                <a href="#sub3"
+                                    class="block px-4 py-2 text-gray-700 hover:bg-blue-50 last:rounded-b-md">Consulting</a>
+                            </div>
+                        </div>
+
+                        <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="menu-btn" class="md:hidden text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <button id="menu-btn" class="md:hidden text-gray-700">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="md:hidden hidden pb-4">
+                    <a href="#home" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
+                    <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
 
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="md:hidden hidden pb-4">
-                <a href="#home" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
-                <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
-                
-                <!-- Mobile Solutions Dropdown -->
-                <button id="mobile-solutions" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 flex justify-between items-center">
-                    Solutions
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                    </svg>
-                </button>
-                <div id="mobile-solutions-menu" class="hidden bg-gray-50">
-                    <a href="#sub1" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Web Development</a>
-                    <a href="#sub2" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">App Development</a>
-                    <a href="#sub3" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Consulting</a>
+                    <!-- Mobile Solutions Dropdown -->
+                    <button id="mobile-solutions"
+                        class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 flex justify-between items-center">
+                        Solutions
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
+                    </button>
+                    <div id="mobile-solutions-menu" class="hidden bg-gray-50">
+                        <a href="#sub1" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Web Development</a>
+                        <a href="#sub2" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">App Development</a>
+                        <a href="#sub3" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Consulting</a>
+                    </div>
+
+                    <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
                 </div>
-
-                <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
             </div>
-        </div>
-    </nav>
+        </nav>
     </header>
 
     <!-- Body -->
     <main class="min-h-screen">
+        <section>
+            <div class="max-w-6xl mx-auto px-4 py-12 flex flex-col md:flex-row gap-8 items-center">
+                <div class="md:w-1/2">
+                    <h1 class="text-4xl font-bold mb-4">Dharm Patel</h1>
+                    <p class="mb-6 text-gray-700">Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid swag typewriter affogato, hella selvage wolf narwhal dreamcatcher. Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid swag typewriter affogato, hella selvage wolf narwhal dreamcatcher.</p>
+                    <button class="bg-black text-white py-2 px-6 hover:bg-gray-800 transition rounded">Learn More</button>
+                </div>
+                <div class="md:w-1/2">
+                    <img class="rounded" alt="hero" src="https://dummyimage.com/720x600">
+                </div>
+            </div>
+        </section>
 
+        <!-- Solutions Card Slider -->
+        <section class="py-12 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Solutions</h2>
+                
+                <!-- 3D Card Stack with Drag -->
+                <div id="cardContainer" class="flex justify-center items-center relative h-96 cursor-grab active:cursor-grabbing select-none">
+                    <div id="cardStack" class="relative w-full h-full" style="perspective: 1000px;">
+                        <!-- Card 1 -->
+                        <a href="#sub1" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-80 h-full bg-white p-6 rounded border border-gray-200 flex flex-col gap-4 cursor-pointer shadow-lg transition-all duration-500"
+                            style="transform: translateX(-50%) translateY(-50%) translateX(0px) scale(1); z-index: 30;">
+                            <div class="w-full">
+                                <img class="rounded w-full h-48 object-cover" alt="Web Development" src="https://dummyimage.com/500x400">
+                            </div>
+                            <div class="w-full flex-1 flex flex-col justify-between">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2">Web Development</h3>
+                                    <p class="text-gray-600 text-sm mb-4">Build modern, responsive websites and web applications tailored to your business needs.</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card 2 -->
+                        <a href="#sub2" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-80 h-full bg-white p-6 rounded border border-gray-200 flex flex-col gap-4 cursor-pointer shadow-lg transition-all duration-500 opacity-60"
+                            style="transform: translateX(-50%) translateY(-50%) translateX(350px) scale(0.85); z-index: 20;">
+                            <div class="w-full">
+                                <img class="rounded w-full h-48 object-cover" alt="App Development" src="https://dummyimage.com/500x400">
+                            </div>
+                            <div class="w-full flex-1 flex flex-col justify-between">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2">App Development</h3>
+                                    <p class="text-gray-600 text-sm mb-4">Create powerful mobile and desktop applications. From iOS to Android, we deliver high-quality apps.</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card 3 -->
+                        <a href="#sub3" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-80 h-full bg-white p-6 rounded border border-gray-200 flex flex-col gap-4 cursor-pointer shadow-lg transition-all duration-500 opacity-60"
+                            style="transform: translateX(-50%) translateY(-50%) translateX(-350px) scale(0.85); z-index: 10;">
+                            <div class="w-full">
+                                <img class="rounded w-full h-48 object-cover" alt="Consulting" src="https://dummyimage.com/500x400">
+                            </div>
+                            <div class="w-full flex-1 flex flex-col justify-between">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2">Consulting</h3>
+                                    <p class="text-gray-600 text-sm mb-4">Get expert advice on your technology strategy. We help businesses transform digitally.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Indicators -->
+                <div class="flex justify-center gap-2 mt-8">
+                    <div class="indicator w-2 h-2 bg-black rounded-full cursor-pointer active-indicator"></div>
+                    <div class="indicator w-2 h-2 bg-gray-300 rounded-full cursor-pointer"></div>
+                    <div class="indicator w-2 h-2 bg-gray-300 rounded-full cursor-pointer"></div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -87,7 +168,7 @@
             <p>&copy; 2026 Dharm Patel. All rights reserved.</p>
         </div>
     </footer>
-    
+
 
 
     <script>
@@ -102,6 +183,95 @@
 
         mobileSolutions.addEventListener('click', () => {
             mobileSolutionsMenu.classList.toggle('hidden');
+        });
+
+        // 3D Card Stack with Drag/Swipe
+        let currentCard = 0;
+        let startX = 0;
+        let isDragging = false;
+        const cards = document.querySelectorAll('.card');
+        const container = document.getElementById('cardContainer');
+        const indicators = document.querySelectorAll('.indicator');
+        const totalCards = 3;
+
+        const cardPositions = [
+            { x: 0, scale: 1, opacity: 1, z: 30 },
+            { x: 350, scale: 0.85, opacity: 0.6, z: 20 },
+            { x: -350, scale: 0.85, opacity: 0.6, z: 10 }
+        ];
+
+        function updateStack() {
+            cards.forEach((card, idx) => {
+                let position = (idx - currentCard + totalCards) % totalCards;
+                let pos = cardPositions[position];
+                
+                card.style.transform = `translateX(-50%) translateY(-50%) translateX(${pos.x}px) scale(${pos.scale})`;
+                card.style.zIndex = pos.z;
+                card.style.opacity = pos.opacity;
+            });
+
+            indicators.forEach((ind, idx) => {
+                ind.classList.toggle('active-indicator', idx === currentCard);
+                ind.classList.toggle('bg-black', idx === currentCard);
+                ind.classList.toggle('bg-gray-300', idx !== currentCard);
+            });
+        }
+
+        container.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.clientX;
+            container.style.cursor = 'grabbing';
+        });
+
+        container.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            startX = e.touches[0].clientX;
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            
+            const diff = startX - e.clientX;
+            if (Math.abs(diff) > 50) {
+                isDragging = false;
+                if (diff > 0) {
+                    currentCard = (currentCard + 1) % totalCards;
+                } else {
+                    currentCard = (currentCard - 1 + totalCards) % totalCards;
+                }
+                updateStack();
+            }
+        });
+
+        document.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            
+            const diff = startX - e.touches[0].clientX;
+            if (Math.abs(diff) > 50) {
+                isDragging = false;
+                if (diff > 0) {
+                    currentCard = (currentCard + 1) % totalCards;
+                } else {
+                    currentCard = (currentCard - 1 + totalCards) % totalCards;
+                }
+                updateStack();
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            container.style.cursor = 'grab';
+        });
+
+        document.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+
+        indicators.forEach((ind, idx) => {
+            ind.addEventListener('click', () => {
+                currentCard = idx;
+                updateStack();
+            });
         });
     </script>
 </body>
