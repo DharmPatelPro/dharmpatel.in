@@ -106,7 +106,7 @@
                 <h2 class="text-3xl font-bold text-center ">Solutions</h2>
                 
                 <!-- 3D Card Stack with Drag -->
-                <div id="cardContainer" class="px-8 flex justify-center items-center relative cursor-grab active:cursor-grabbing select-none overflow-hidden" style="perspective: 1200px; min-height: 350px;">
+                <div id="cardContainer" class=" flex justify-center items-center relative cursor-grab active:cursor-grabbing select-none overflow-hidden" style="perspective: 1200px; min-height: 350px;">
                     <div id="cardStack" class="relative w-full" style="perspective: 1000px;">
                         <!-- Card 1 -->
                         <a href="#sub1" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
@@ -180,14 +180,14 @@
             if (isMobile) {
                 return [
                     { x: 0, scale: 1, opacity: 1, z: 30, rotate: 0 },
-                    { x: 35, scale: 0.90, opacity: 0.75, z: 12, rotate: -2 },
-                    { x: -35, scale: 0.90, opacity: 0.75, z: 8, rotate: 2 }
+                    { x: 50, scale: 0.80, opacity: 0.85, z: 12, rotate: -2 },
+                    { x: -50, scale: 0.80, opacity: 0.85, z: 8, rotate: 2 }
                 ];
             }
             return [
                 { x: 0, scale: 1, opacity: 1, z: 30, rotate: 0 },
-                { x: 120, scale: 0.96, opacity: 0.95, z: 20, rotate: -6 },
-                { x: -120, scale: 0.96, opacity: 0.95, z: 10, rotate: 6 }
+                { x: 120, scale: 0.90, opacity: 0.95, z: 20, rotate: -6 },
+                { x: -120, scale: 0.90, opacity: 0.95, z: 10, rotate: 6 }
             ];
         }
 
