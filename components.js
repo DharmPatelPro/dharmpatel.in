@@ -88,6 +88,10 @@ function getFooter() {
                         <i class="fas fa-phone text-sm text-gray-600"></i>
                         <a href="tel:+918160733241" class="text-gray-700 hover:text-blue-600 transition">+91 8160733241</a>
                     </p>
+                    <p class="text-gray-700 text-sm mb-1 flex items-center gap-2">
+                        <i class="fas fa-envelope text-sm text-gray-600"></i>
+                        <a href="mailto:dharmpatel8160@gmail.com" class="text-gray-700 hover:text-blue-600 transition">dharmpatel8160@gmail.com</a>
+                    </p>
                     <p class="text-gray-700 text-sm flex items-center gap-2">
                         <i class="fas fa-map-marker-alt text-sm text-gray-600"></i>
                         Ahmedabad, Gujarat, India
