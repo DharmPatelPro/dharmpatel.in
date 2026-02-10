@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- Portfolio About Page: Background, vision, capabilities, experience, and gallery -->
 <html>
 
 <head>
@@ -6,94 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="/components.js"></script>
     <style>
         html {
-            scroll-behavior: smooth;
+            scroll-behavior: smooth; /* Smooth scroll for anchor links */
         }
     </style>
 
 </head>
 
 <body>
+    <div id="app-header"></div>
 
-    <!-- Header -->
-    <header>
-        <!-- Navbar -->
-        <nav class="bg-white shadow-md sticky top-0 z-50">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-16">
-                    <!-- Logo -->
-                    <div class="flex-shrink-0 font-bold text-xl text-gray-900">
-                        Dharm Patel
-                    </div>
-
-                    <!-- Desktop Menu -->
-                    <div class="hidden md:flex space-x-8">
-                        <a href="/index.html" class="text-gray-700 hover:text-blue-600 transition">Home</a>
-                        <a href="/about.html" class="text-gray-700 hover:text-blue-600 transition">About</a>
-
-                        <!-- Solutions Dropdown -->
-                        <div class="relative group">
-                            <button class="text-gray-700 hover:text-blue-600 transition flex items-center">
-                                Solutions
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                                </svg>
-                            </button>
-                            <div
-                                class="absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
-                                <a href="#sub1"
-                                    class="block px-4 py-2 text-gray-700 hover:bg-blue-50 first:rounded-t-md">Web
-                                    Development</a>
-                                <a href="#sub2" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">App
-                                    Development</a>
-                                <a href="#sub3"
-                                    class="block px-4 py-2 text-gray-700 hover:bg-blue-50 last:rounded-b-md">Consulting</a>
-                            </div>
-                        </div>
-
-                        <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
-                    </div>
-
-                    <!-- Mobile Menu Button -->
-                    <button id="menu-btn" class="md:hidden text-gray-700">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-
-                <!-- Mobile Menu -->
-                <div id="mobile-menu" class="md:hidden hidden pb-4">
-                    <a href="/index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
-                    <a href="/about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
-
-                    <!-- Mobile Solutions Dropdown -->
-                    <button id="mobile-solutions"
-                        class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 flex justify-between items-center">
-                        Solutions
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                        </svg>
-                    </button>
-                    <div id="mobile-solutions-menu" class="hidden bg-gray-50">
-                        <a href="#sub1" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Web Development</a>
-                        <a href="#sub2" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">App Development</a>
-                        <a href="#sub3" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Consulting</a>
-                    </div>
-
-                    <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Body -->
     <main class="min-h-screen">
-        <!-- Hero 1: Introduction -->
         <section>
             <div class="max-w-6xl mx-auto px-4 py-12 flex flex-col md:flex-row gap-8 items-center">
                 <div class="md:w-1/2">
@@ -119,7 +45,6 @@
             </div>
         </section>
 
-        <!-- Capability Section -->
         <section>
             <div class="max-w-6xl mx-auto px-4 py-12">
                 <h2 class="text-3xl font-bold mb-8 text-center">Capabilities</h2>
@@ -164,14 +89,11 @@
             </div>
         </section>
 
-        <!-- Experience: Life Story as Workflow/Timeline -->
         <section class="bg-gray-50">
             <div class="max-w-6xl mx-auto px-4 py-12">
                 <h2 class="text-3xl font-bold mb-12 text-center">Experience</h2>
                 <div class="max-w-4xl mx-auto">
-                    <!-- Timeline workflow -->
                     <div class="relative">
-                        <!-- Step 1 -->
                         <div class="flex mb-12 relative">
                             <div class="flex flex-col items-center mr-8">
                                 <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center text-white text-2xl font-bold">1</div>
@@ -183,7 +105,6 @@
                             </div>
                         </div>
 
-                        <!-- Step 2 -->
                         <div class="flex mb-12 relative">
                             <div class="flex flex-col items-center mr-8">
                                 <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center text-white text-2xl font-bold">2</div>
@@ -195,7 +116,6 @@
                             </div>
                         </div>
 
-                        <!-- Step 3 -->
                         <div class="flex mb-12 relative">
                             <div class="flex flex-col items-center mr-8">
                                 <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center text-white text-2xl font-bold">3</div>
@@ -207,7 +127,6 @@
                             </div>
                         </div>
 
-                        <!-- Step 4 -->
                         <div class="flex">
                             <div class="flex flex-col items-center mr-8">
                                 <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center text-white text-2xl font-bold">4</div>
@@ -222,7 +141,6 @@
             </div>
         </section>
 
-        <!-- Gallery Section -->
         <section>
             <div class="max-w-6xl mx-auto px-4 py-12">
                 <h2 class="text-3xl font-bold mb-8 text-center">Gallery</h2>
@@ -250,55 +168,9 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer id="contact" class="bg-gray-100 py-4">
-        <div class="max-w-6xl mx-auto px-4">
-            <!-- Contact Section -->
-            <div class="flex justify-between items-center mb-3">
-                <div>
-                    <h3 class="text-sm font-bold text-gray-900 mb-1">Contact</h3>
-                    <p class="text-gray-700 text-sm mb-1">
-                        <a href="tel:+1234567890" class="text-gray-700 hover:text-blue-600 transition">+1 (234) 567-890</a>
-                    </p>
-                    <p class="text-gray-700 text-sm">
-                        123 Main Street, City, State 12345
-                    </p>
-                </div>
-                <div class="flex gap-4 text-lg">
-                    <a href="https://linkedin.com/in/dharmpatel" target="_blank" class="text-gray-600 hover:text-blue-600 transition">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://instagram.com/dharmpatel" target="_blank" class="text-gray-600 hover:text-pink-500 transition">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://github.com/dharmpatel" target="_blank" class="text-gray-600 hover:text-gray-900 transition">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="border-t border-gray-300 pt-2">
-                <p class="text-gray-600 text-xs text-center">&copy; 2026 Dharm Patel. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-
+    <div id="app-footer"></div>
 
     <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileSolutions = document.getElementById('mobile-solutions');
-        const mobileSolutionsMenu = document.getElementById('mobile-solutions-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        mobileSolutions.addEventListener('click', () => {
-            mobileSolutionsMenu.classList.toggle('hidden');
-        });
-
-       
     </script>
 </body>
 

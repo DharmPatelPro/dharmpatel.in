@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- Portfolio Homepage: Main landing page with hero, 3D carousel, and footer -->
 <html>
 
 <head>
@@ -6,95 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="/components.js"></script>
     <style>
         html {
-            scroll-behavior: smooth;
+            scroll-behavior: smooth; /* Smooth scroll for anchor links */
         }
         .card {
-            transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1), opacity 500ms cubic-bezier(0.4, 0, 0.2, 1), z-index 500ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1);
+            /* Animate card transform, opacity, z-index, and shadow */
+            transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1), 
+                        opacity 500ms cubic-bezier(0.4, 0, 0.2, 1), 
+                        z-index 500ms cubic-bezier(0.4, 0, 0.2, 1), 
+                        box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1);
         }
     </style>
 
 </head>
 
 <body>
+    <div id="app-header"></div>
 
-    <!-- Header -->
-    <header>
-        <!-- Navbar -->
-        <nav class="bg-white shadow-md sticky top-0 z-50">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-16">
-                    <!-- Logo -->
-                    <div class="flex-shrink-0 font-bold text-xl text-gray-900">
-                        Dharm Patel
-                    </div>
-
-                    <!-- Desktop Menu -->
-                    <div class="hidden md:flex space-x-8">
-                        <a href="/index.html" class="text-gray-700 hover:text-blue-600 transition">Home</a>
-                        <a href="/about.html" class="text-gray-700 hover:text-blue-600 transition">About</a>
-
-                        <!-- Solutions Dropdown -->
-                        <div class="relative group">
-                            <button class="text-gray-700 hover:text-blue-600 transition flex items-center">
-                                Solutions
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                                </svg>
-                            </button>
-                            <div
-                                class="absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
-                                <a href="#sub1"
-                                    class="block px-4 py-2 text-gray-700 hover:bg-blue-50 first:rounded-t-md">Web
-                                    Development</a>
-                                <a href="#sub2" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">App
-                                    Development</a>
-                                <a href="#sub3"
-                                    class="block px-4 py-2 text-gray-700 hover:bg-blue-50 last:rounded-b-md">Consulting</a>
-                            </div>
-                        </div>
-
-                        <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
-                    </div>
-
-                    <!-- Mobile Menu Button -->
-                    <button id="menu-btn" class="md:hidden text-gray-700">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-
-                <!-- Mobile Menu -->
-                <div id="mobile-menu" class="md:hidden hidden pb-4">
-                    <a href="/index.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
-                    <a href="/about.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
-
-                    <!-- Mobile Solutions Dropdown -->
-                    <button id="mobile-solutions"
-                        class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 flex justify-between items-center">
-                        Solutions
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                        </svg>
-                    </button>
-                    <div id="mobile-solutions-menu" class="hidden bg-gray-50">
-                        <a href="#sub1" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Web Development</a>
-                        <a href="#sub2" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">App Development</a>
-                        <a href="#sub3" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Consulting</a>
-                    </div>
-
-                    <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Body -->
     <main class="min-h-screen">
         <section>
             <div class="max-w-6xl mx-auto px-4 py-12 flex flex-col md:flex-row gap-8 items-center">
@@ -109,64 +40,50 @@
             </div>
         </section>
 
-        <!-- Solutions Card Slider -->
-        <section >
+        <!-- 3D card carousel: Services with drag/swipe and arrow navigation -->
+        <section>
             <div class="max-w-6xl mx-auto py-5">
-                <h2 class="text-3xl font-bold text-center ">Solutions</h2>
-                
-                <!-- 3D Card Stack with Drag -->
-                <div id="cardContainer" class=" flex justify-center items-center relative cursor-grab active:cursor-grabbing select-none overflow-hidden" style="perspective: 1200px; min-height: 350px;">
+                <h2 class="text-3xl font-bold text-center">Solutions</h2>
+                <div id="cardContainer" class="flex justify-center items-center relative cursor-grab active:cursor-grabbing select-none overflow-hidden" style="perspective: 1200px; min-height: 350px;">
                     <div id="cardStack" class="relative w-full" style="perspective: 1000px;">
-                        <!-- Card 1 -->
-                        <a href="#sub1" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
+                        <a href="/solutions/controlsystem.html" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
                             style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(0px) scale(1); z-index: 30;">
+                            <img class="rounded w-full object-cover" alt="Control System" style="height: clamp(100px, 25vw, 160px);" src="https://dummyimage.com/500x400">
+                            <h3 class="text-lg font-bold">Control System</h3>
+                            <p class="text-gray-600 text-sm">Advanced automation and control system solutions.</p>
+                        </a>
+                        <a href="/solutions/embedded&circuitdesign.html" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
+                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(350px) scale(0.85); z-index: 20;">
+                            <img class="rounded w-full object-cover" alt="Embedded & Circuit Design" style="height: clamp(100px, 25vw, 160px);" src="https://dummyimage.com/500x400">
+                            <h3 class="text-lg font-bold">Embedded & Circuit</h3>
+                            <p class="text-gray-600 text-sm">Custom embedded systems and circuit design.</p>
+                        </a>
+                        <a href="/solutions/training&documentation.html" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
+                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(-350px) scale(0.85); z-index: 10;">
+                            <img class="rounded w-full object-cover" alt="Training & Documentation" style="height: clamp(100px, 25vw, 160px);" src="https://dummyimage.com/500x400">
+                            <h3 class="text-lg font-bold">Training & Docs</h3>
+                            <p class="text-gray-600 text-sm">Comprehensive training and documentation.</p>
+                        </a>
+                        <a href="/solutions/3ddesign.html" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
+                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(450px) scale(0.8); z-index: 8;">
+                            <img class="rounded w-full object-cover" alt="3D Design" style="height: clamp(100px, 25vw, 160px);" src="https://dummyimage.com/500x400">
+                            <h3 class="text-lg font-bold">3D Design</h3>
+                            <p class="text-gray-600 text-sm">Professional 3D modeling and visualization.</p>
+                        </a>
+                        <a href="/solutions/webdevelopment.html" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
+                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(-450px) scale(0.8); z-index: 6;">
                             <img class="rounded w-full object-cover" alt="Web Development" style="height: clamp(100px, 25vw, 160px);" src="https://dummyimage.com/500x400">
                             <h3 class="text-lg font-bold">Web Development</h3>
-                            <p class="text-gray-600 text-sm">Build modern, responsive websites and applications.Build modern, responsive websites and applications.Build modern, responsive websites and applications.</p>
+                            <p class="text-gray-600 text-sm">Modern, responsive web applications.</p>
                         </a>
-
-                        <!-- Card 2 -->
-                        <a href="#sub2" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
-                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(350px) scale(0.85); z-index: 20;">
-                            <img class="rounded w-full object-cover" alt="App Development" style="height: clamp(100px, 25vw, 160px);" src="https://dummyimage.com/500x400">
-                            <h3 class="text-lg font-bold">App Development</h3>
-                            <p class="text-gray-600 text-sm">Create powerful mobile and desktop applications.</p>
-                        </a>
-
-                        <!-- Card 3 -->
-                        <a href="#sub3" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
-                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(-350px) scale(0.85); z-index: 10;">
+                        <a href="/solutions/contradictions.html" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
+                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(600px) scale(0.75); z-index: 4;">
                             <img class="rounded w-full object-cover" alt="Consulting" style="height: clamp(100px, 25vw, 160px);" src="https://dummyimage.com/500x400">
                             <h3 class="text-lg font-bold">Consulting</h3>
-                            <p class="text-gray-600 text-sm">Get expert advice on technology strategy.</p>
-                        </a>
-                        
-                        <!-- Card 4 -->
-                        <a href="#sub4" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
-                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(450px) scale(0.8); z-index: 8;">
-                            <img class="rounded w-full object-cover" alt="Control" style="height: clamp(100px, 25vw, 160px);" src="https://dummyimage.com/500x400">
-                            <h3 class="text-lg font-bold">Control</h3>
-                            <p class="text-gray-600 text-sm">Control systems and automation solutions.</p>
-                        </a>
-
-                        <!-- Card 5 -->
-                        <a href="#sub5" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
-                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(-450px) scale(0.8); z-index: 6;">
-                            <img class="rounded w-full object-cover" alt="Embedded" style="height: clamp(100px, 25vw, 160px);" src="https://dummyimage.com/500x400">
-                            <h3 class="text-lg font-bold">Embedded</h3>
-                            <p class="text-gray-600 text-sm">Embedded software and firmware development.</p>
-                        </a>
-
-                        <!-- Card 6 -->
-                        <a href="#sub6" class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
-                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(600px) scale(0.75); z-index: 4;">
-                            <img class="rounded w-full object-cover" alt="Design" style="height: clamp(100px, 25vw, 160px);" src="https://dummyimage.com/500x400">
-                            <h3 class="text-lg font-bold">Design</h3>
-                            <p class="text-gray-600 text-sm">UI/UX and product design services.</p>
+                            <p class="text-gray-600 text-sm">Strategic technology consulting services.</p>
                         </a>
                     </div>
 
-                    <!-- Nav buttons -->
                     <button id="prevBtn" class="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm text-black rounded-full items-center justify-center border border-gray-200 hover:scale-105 transition" style="width: 40px; height: 40px; font-size: 18px;">&#10094;</button>
                     <button id="nextBtn" class="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm text-black rounded-full items-center justify-center border border-gray-200 hover:scale-105 transition" style="width: 40px; height: 40px; font-size: 18px;">&#10095;</button>
                 </div>
@@ -176,55 +93,10 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer id="contact" class="bg-gray-100 py-4">
-        <div class="max-w-6xl mx-auto px-4">
-            <!-- Contact Section -->
-            <div class="flex justify-between items-center mb-3">
-                <div>
-                    <h3 class="text-sm font-bold text-gray-900 mb-1">Contact</h3>
-                    <p class="text-gray-700 text-sm mb-1">
-                        <a href="tel:+1234567890" class="text-gray-700 hover:text-blue-600 transition">+1 (234) 567-890</a>
-                    </p>
-                    <p class="text-gray-700 text-sm">
-                        123 Main Street, City, State 12345
-                    </p>
-                </div>
-                <div class="flex gap-4 text-lg">
-                    <a href="https://linkedin.com/in/dharmpatel" target="_blank" class="text-gray-600 hover:text-blue-600 transition">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://instagram.com/dharmpatel" target="_blank" class="text-gray-600 hover:text-pink-500 transition">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://github.com/dharmpatel" target="_blank" class="text-gray-600 hover:text-gray-900 transition">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="border-t border-gray-300 pt-2">
-                <p class="text-gray-600 text-xs text-center">&copy; 2026 Dharm Patel. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-
+    <div id="app-footer"></div>
 
     <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileSolutions = document.getElementById('mobile-solutions');
-        const mobileSolutionsMenu = document.getElementById('mobile-solutions-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        mobileSolutions.addEventListener('click', () => {
-            mobileSolutionsMenu.classList.toggle('hidden');
-        });
-
-        // 3D Card Stack with Drag/Swipe and subtle desktop buttons (dynamic card count)
+        // 3D carousel with drag/swipe support
         let currentCard = 0;
         let startX = 0;
         let isDragging = false;
@@ -240,17 +112,17 @@
             }
         }
 
+        // Update card positions and transforms based on carousel index
         function updateStack() {
             const isMobile = window.innerWidth < 768;
-            const rightBase = isMobile ? 60 : 140; // base horizontal offset for the immediate side cards
+            const rightBase = isMobile ? 60 : 140;
             const scaleStep = 0.25;
             const zBase = 40;
 
             cards.forEach((card, idx) => {
-                const rel = (idx - currentCard + totalCards) % totalCards; // 0 => front, 1 => next(right), totalCards-1 => prev(left)
+                const rel = (idx - currentCard + totalCards) % totalCards;
                 let x = 0, scale = 1, opacity = 1, z = zBase, rotate = 0;
 
-                // Only the front and immediate neighbors are prominently visible.
                 if (rel === 0) {
                     x = 0; scale = 1; opacity = 1; z = zBase; rotate = 0;
                     card.style.pointerEvents = 'auto';
@@ -261,10 +133,9 @@
                     x = -rightBase; scale = 1 - scaleStep; opacity = 0.96; z = zBase - 12; rotate = 6;
                     card.style.pointerEvents = 'auto';
                 } else {
-                    // All other cards should be very subtle and non-interactive.
                     const subtleX = isMobile ? rightBase * 1.2 : rightBase * 1.5;
                     if (rel > 1 && rel <= Math.floor(totalCards / 2)) {
-                        x = subtleX; // keep near the side but very faded
+                        x = subtleX;
                     } else {
                         x = -subtleX;
                     }
@@ -282,7 +153,6 @@
             });
         }
 
-        // Drag / swipe handlers
         container.addEventListener('mousedown', (e) => {
             isDragging = true;
             startX = e.clientX;
@@ -299,12 +169,16 @@
             const diff = startX - currentX;
             if (Math.abs(diff) > 30) {
                 isDragging = false;
-                if (diff > 0) currentCard = (currentCard + 1) % totalCards;
-                else currentCard = (currentCard - 1 + totalCards) % totalCards;
+                if (diff > 0) {
+                    currentCard = (currentCard + 1) % totalCards;
+                } else {
+                    currentCard = (currentCard - 1 + totalCards) % totalCards;
+                }
                 updateStack();
             }
         }
 
+        // Drag/swipe handlers
         document.addEventListener('mousemove', (e) => handlePointerMove(e.clientX));
         document.addEventListener('touchmove', (e) => handlePointerMove(e.touches[0].clientX), { passive: true });
 
@@ -317,7 +191,6 @@
             isDragging = false;
         });
 
-        // Subtle desktop buttons
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
 
@@ -331,12 +204,10 @@
             updateStack();
         });
 
-        // Update positions on resize
         window.addEventListener('resize', () => {
             updateStack();
         });
 
-        // Initial stack layout
         updateStack();
     </script>
 </body>
