@@ -32,8 +32,6 @@ function getHeader() {
                                     class="block px-4 py-2 text-gray-700 hover:bg-blue-50">3D Design</a>
                                 <a href="/solutions/webdevelopment.html"
                                     class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Web Development</a>
-                                <a href="/solutions/contradictions.html"
-                                    class="block px-4 py-2 text-gray-700 hover:bg-blue-50 last:rounded-b-md">Consulting</a>
                             </div>
                         </div>
 
@@ -65,7 +63,6 @@ function getHeader() {
                         <a href="/solutions/training&documentation.html" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Training & Documentation</a>
                         <a href="/solutions/3ddesign.html" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">3D Design</a>
                         <a href="/solutions/webdevelopment.html" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Web Development</a>
-                        <a href="/solutions/contradictions.html" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Consulting</a>
                     </div>
 
                     <a href="/index.html#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
