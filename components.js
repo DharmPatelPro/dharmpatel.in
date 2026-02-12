@@ -6,11 +6,11 @@ function getHeader() {
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-center h-16">
                     <div class="flex-shrink-0 font-bold text-xl text-gray-900">
-                        <a href="/index" class="text-gray-900 hover:text-blue-600 transition">Dharm Patel</a>
+                        <a href="/" class="text-gray-900 hover:text-blue-600 transition">Dharm Patel</a>
                     </div>
 
                     <div class="hidden md:flex space-x-8">
-                        <a href="/index" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                        <a href="/" class="text-gray-700 hover:text-blue-600 transition">Home</a>
                         <a href="/about" class="text-gray-700 hover:text-blue-600 transition">About</a>
                         <div class="relative group">
                             <button class="text-gray-700 hover:text-blue-600 transition flex items-center">
@@ -35,7 +35,7 @@ function getHeader() {
                             </div>
                         </div>
 
-                        <a href="/index#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+                        <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
                     </div>
 
                     <button id="menu-btn" class="md:hidden text-gray-700">
@@ -47,7 +47,7 @@ function getHeader() {
                 </div>
 
                 <div id="mobile-menu" class="md:hidden hidden pb-4">
-                    <a href="/index" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
+                    <a href="/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
                     <a href="/about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
                     <button id="mobile-solutions"
                         class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 flex justify-between items-center">
@@ -65,7 +65,7 @@ function getHeader() {
                         <a href="/solutions/webdevelopment" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Web Development</a>
                     </div>
 
-                    <a href="/index#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
+                    <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
                 </div>
             </div>
         </nav>
