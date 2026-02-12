@@ -18,21 +18,195 @@
 <body>
     <div id="app-header"></div>
 
-    <main class="min-h-screen">
-        <section class="bg-gradient-to-r from-green-50 to-emerald-50 py-12">
-            <div class="max-w-6xl mx-auto px-4">
-                <h1 class="text-4xl font-bold mb-4">Control System</h1>
-                <p class="text-gray-700 text-lg">Advanced automation and control system solutions for industrial and commercial applications.</p>
-            </div>
-        </section>
+    <section class="max-w-5xl mx-auto px-4 py-12 space-y-8">
 
-        <section class="py-12">
-            <div class="max-w-6xl mx-auto px-4">
-                <h2 class="text-3xl font-bold mb-8">Overview</h2>
-                <p class="text-gray-700 mb-6">We develop robust control systems that streamline operations and improve efficiency.</p>
-            </div>
-        </section>
-    </main>
+        <div>
+            <h2 class="text-3xl font-bold mb-3">Introduction to Control Systems</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Control systems are a fundamental part of modern engineering and technology. They are used to regulate,
+                manage, and control the behavior of machines, processes, and dynamic systems. The main objective of a
+                control
+                system is to ensure that the output of a system follows a desired input with high accuracy, stability,
+                and efficiency.
+                Control systems are widely applied in robotics, automation, electrical engineering, aerospace,
+                mechanical systems,
+                and industrial processes.
+            </p>
+            <p class="text-gray-700 leading-relaxed mt-3">
+                With the rapid development of automation and intelligent machines, control systems have become
+                increasingly
+                important. From simple household devices like fans and refrigerators to complex systems such as
+                autonomous robots
+                and aircraft navigation systems, control theory provides the mathematical and conceptual framework to
+                design
+                reliable and efficient systems.
+            </p>
+        </div>
+
+        <div>
+            <h2 class="text-2xl font-semibold mb-3">Basic Concept of Control Systems</h2>
+            <p class="text-gray-700 leading-relaxed">
+                A control system is a system that takes an input signal, processes it using a controller, and produces
+                an output.
+                In many systems, the output is measured and compared with the desired input to determine the error. The
+                controller
+                then adjusts the system to reduce this error. This process is known as feedback control.
+            </p>
+
+            <ul class="list-disc pl-6 text-gray-700 mt-3 space-y-1">
+                <li><strong>Reference Input:</strong> Desired value or target output.</li>
+                <li><strong>Controller:</strong> Computes the control action based on error.</li>
+                <li><strong>Plant/System:</strong> Physical system being controlled.</li>
+                <li><strong>Output:</strong> Actual response of the system.</li>
+                <li><strong>Feedback:</strong> Measurement of output used for correction.</li>
+            </ul>
+        </div>
+
+        <div>
+            <h2 class="text-2xl font-semibold mb-3">Classification of Control Systems</h2>
+
+            <h3 class="text-xl font-medium mt-2">1. Open-Loop Control Systems</h3>
+            <p class="text-gray-700 leading-relaxed">
+                In an open-loop control system, the control action is independent of the output. There is no feedback
+                mechanism,
+                which makes the system simple and easy to design. However, open-loop systems cannot compensate for
+                disturbances
+                or variations in system parameters, which reduces their accuracy.
+            </p>
+            <p class="text-gray-700 mt-2">
+                Examples include washing machines with fixed timers, electric heaters without temperature sensors,
+                and basic motor control systems without feedback.
+            </p>
+
+            <h3 class="text-xl font-medium mt-4">2. Closed-Loop Control Systems</h3>
+            <p class="text-gray-700 leading-relaxed">
+                In a closed-loop control system, the output is continuously monitored and compared with the reference
+                input.
+                The difference between them is called the error signal. The controller uses this error to adjust the
+                control input,
+                making closed-loop systems more accurate, stable, and robust.
+            </p>
+            <p class="text-gray-700 mt-2">
+                Examples include temperature control systems using thermostats, speed control of motors using encoders,
+                and robotic manipulators using position feedback.
+            </p>
+        </div>
+
+        <div>
+            <h2 class="text-2xl font-semibold mb-3">Mathematical Modeling of Control Systems</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Mathematical modeling is essential for analyzing and designing control systems. It involves representing
+                a physical
+                system using mathematical equations. Two common approaches are transfer function modeling and
+                state-space modeling.
+            </p>
+
+            <h3 class="text-xl font-medium mt-2">Transfer Function</h3>
+            <p class="text-gray-700 leading-relaxed">
+                The transfer function of a system is defined as the ratio of the Laplace transform of the output to the
+                input,
+                assuming zero initial conditions. It is expressed as:
+            </p>
+            <p class="text-gray-800 font-mono mt-2">
+                G(s) = Y(s) / U(s)
+            </p>
+
+            <h3 class="text-xl font-medium mt-4">State-Space Representation</h3>
+            <p class="text-gray-700 leading-relaxed">
+                State-space modeling represents a system using a set of first-order differential equations. It is widely
+                used in
+                modern control systems and robotics because it can handle multi-input and multi-output systems
+                effectively.
+            </p>
+        </div>
+
+        <div>
+            <h2 class="text-2xl font-semibold mb-3">Controllers in Control Systems</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Controllers are the core of a control system. They determine how the system responds to the error
+                signal.
+                The most commonly used controller in engineering is the PID controller.
+            </p>
+
+            <h3 class="text-xl font-medium mt-2">PID Controller</h3>
+            <p class="text-gray-700 leading-relaxed">
+                A PID controller consists of three terms: Proportional (P), Integral (I), and Derivative (D).
+                Each term contributes to improving system performance.
+            </p>
+
+            <ul class="list-disc pl-6 text-gray-700 mt-3 space-y-1">
+                <li><strong>Proportional (P):</strong> Responds to the current error.</li>
+                <li><strong>Integral (I):</strong> Eliminates steady-state error.</li>
+                <li><strong>Derivative (D):</strong> Predicts future error based on rate of change.</li>
+            </ul>
+        </div>
+
+        <div>
+            <h2 class="text-2xl font-semibold mb-3">Performance Characteristics of Control Systems</h2>
+            <p class="text-gray-700 leading-relaxed">
+                The performance of a control system is evaluated using several parameters such as stability, transient
+                response,
+                steady-state error, and robustness.
+            </p>
+
+            <ul class="list-disc pl-6 text-gray-700 mt-3 space-y-1">
+                <li><strong>Stability:</strong> Ability of a system to return to equilibrium after disturbance.</li>
+                <li><strong>Transient Response:</strong> Behavior of the system during changes in input.</li>
+                <li><strong>Steady-State Error:</strong> Error after the system reaches steady state.</li>
+                <li><strong>Robustness:</strong> Ability to maintain performance under uncertainties.</li>
+            </ul>
+        </div>
+
+        <div>
+            <h2 class="text-2xl font-semibold mb-3">Importance of Control Systems</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Control systems are vital for modern engineering because they enable accurate, stable, and efficient
+                operation
+                of machines and processes. Without control systems, automation and intelligent machines would not be
+                possible.
+            </p>
+
+            <ul class="list-disc pl-6 text-gray-700 mt-3 space-y-1">
+                <li>Improves accuracy and precision in engineering systems.</li>
+                <li>Enables automation in industries and robotics.</li>
+                <li>Enhances safety and reliability of systems.</li>
+                <li>Optimizes performance and energy efficiency.</li>
+                <li>Supports development of advanced technologies like autonomous systems.</li>
+            </ul>
+        </div>
+
+        <div>
+            <h2 class="text-2xl font-semibold mb-3">Applications of Control Systems</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Control systems are used in almost every field of engineering and technology.
+            </p>
+
+            <ul class="list-disc pl-6 text-gray-700 mt-3 space-y-1">
+                <li>Robotics and autonomous vehicles</li>
+                <li>Industrial automation and manufacturing</li>
+                <li>Electrical power and energy systems</li>
+                <li>Aerospace and aviation systems</li>
+                <li>Automotive control systems</li>
+                <li>Communication and signal processing</li>
+                <li>Medical devices and smart systems</li>
+            </ul>
+        </div>
+
+        <div>
+            <h2 class="text-2xl font-semibold mb-3">Conclusion</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Control systems form the backbone of modern engineering and automation. By combining mathematical
+                modeling,
+                feedback mechanisms, and intelligent controllers, control systems enable machines and processes to
+                operate
+                accurately, safely, and efficiently. As technology continues to evolve, control systems will remain a
+                key area
+                of research and innovation in robotics, automation, and intelligent systems.
+            </p>
+        </div>
+
+    </section>
+
 
     <div id="app-footer"></div>
 
