@@ -23,13 +23,13 @@ function getHeader() {
                             </button>
                             <div
                                 class="absolute left-0 mt-0 w-56 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200">
-                                <a href="/solutions/controlsystem"
+                                <a href="/solutions/control-system"
                                     class="block px-4 py-2 text-gray-700 hover:bg-blue-50 first:rounded-t-md">Control System</a>
-                                <a href="/solutions/embedded&circuitdesign"
+                                <a href="/solutions/embedded-circuit-design"
                                     class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Embedded & Circuit Design</a>
-                                <a href="/solutions/training&documentation"
+                                <a href="/solutions/training-documentation"
                                     class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Training & Documentation</a>
-                                <a href="/solutions/3ddesign"
+                                <a href="/solutions/3d-design"
                                     class="block px-4 py-2 text-gray-700 hover:bg-blue-50">3D Design</a>
                                 <a href="/solutions/webdevelopment"
                                     class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Web Development</a>
@@ -60,10 +60,10 @@ function getHeader() {
                         </svg>
                     </button>
                     <div id="mobile-solutions-menu" class="hidden bg-gray-50">
-                        <a href="/solutions/controlsystem" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Control System</a>
-                        <a href="/solutions/embedded&circuitdesign" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Embedded & Circuit Design</a>
-                        <a href="/solutions/training&documentation" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Training & Documentation</a>
-                        <a href="/solutions/3ddesign" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">3D Design</a>
+                        <a href="/solutions/control-system" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Control System</a>
+                        <a href="/solutions/embedded-circuit-design" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Embedded & Circuit Design</a>
+                        <a href="/solutions/training-documentation" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Training & Documentation</a>
+                        <a href="/solutions/3d-design" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">3D Design</a>
                         <a href="/solutions/webdevelopment" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Web Development</a>
                     </div>
 
