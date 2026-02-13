@@ -14,7 +14,7 @@ function getHeader() {
                         <a href="/about" class="text-gray-700 hover:text-blue-600 transition">About</a>
                         <a href="/experience" class="text-gray-700 hover:text-blue-600 transition">Experience</a>
                         <div class="relative group">
-                            <button class="text-gray-700 hover:text-blue-600 transition flex items-center">
+                            <button aria-label="Toggle mobile solutions menu" class="text-gray-700 hover:text-blue-600 transition flex items-center">
                                 Solutions
                                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -39,7 +39,7 @@ function getHeader() {
                         <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
                     </div>
 
-                    <button id="menu-btn" class="md:hidden text-gray-700">
+                    <button id="menu-btn" class="md:hidden text-gray-700" aria-label="Toggle mobile menu">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16"></path>
@@ -51,8 +51,9 @@ function getHeader() {
                     <a href="/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
                     <a href="/about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
                     <a href="/experience" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Experience</a>
-                    <button id="mobile-solutions"aria-label="Toggle mobile menu"
-                        class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 flex justify-between items-center">
+                    <button id="mobile-solutions" 
+                        class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 flex justify-between items-center"
+                        aria-label="Toggle mobile solutions menu">
                         Solutions
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
