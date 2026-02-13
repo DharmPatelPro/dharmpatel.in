@@ -51,7 +51,7 @@ function getHeader() {
                     <a href="/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
                     <a href="/about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
                     <a href="/experience" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Experience</a>
-                    <button id="mobile-solutions"
+                    <button id="mobile-solutions"aria-label="Toggle mobile menu"
                         class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 flex justify-between items-center">
                         Solutions
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,7 +59,7 @@ function getHeader() {
                                 d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                         </svg>
                     </button>
-                    <div id="mobile-solutions-menu" class="hidden bg-gray-50">
+                    <div id="mobile-solutions-menu" class="hidden bg-gray-50" >
                         <a href="/solutions/control-system" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Control System</a>
                         <a href="/solutions/embedded-circuit-design" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Embedded & Circuit Design</a>
                         <a href="/solutions/training-documentation" class="block px-8 py-2 text-gray-600 hover:bg-gray-100">Training & Documentation</a>
