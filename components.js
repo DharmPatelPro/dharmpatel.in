@@ -12,6 +12,7 @@ function getHeader() {
                     <div class="hidden md:flex space-x-8">
                         <a href="/" class="text-gray-700 hover:text-blue-600 transition">Home</a>
                         <a href="/about" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                        <a href="/experience" class="text-gray-700 hover:text-blue-600 transition">Experience</a>
                         <div class="relative group">
                             <button class="text-gray-700 hover:text-blue-600 transition flex items-center">
                                 Solutions
@@ -49,6 +50,7 @@ function getHeader() {
                 <div id="mobile-menu" class="md:hidden hidden pb-4">
                     <a href="/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
                     <a href="/about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
+                    <a href="/experience" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Experience</a>
                     <button id="mobile-solutions"
                         class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 flex justify-between items-center">
                         Solutions
