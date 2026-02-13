@@ -5,9 +5,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Critical CSS -->
     <link rel="stylesheet" href="./output.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Defer Font Awesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Defer JavaScript -->
     <script src="/components.js" defer></script>
 
     <script type="application/ld+json">
@@ -26,7 +36,6 @@
     }
     </script>
 
-
     <title>Dharm Patel | Robotics & Automation Engineer</title>
 
     <meta name="description"
@@ -39,21 +48,19 @@
     <meta property="og:image" content="https://dharmpatel.in/photos/g5.webp">
     <meta property="og:url" content="https://dharmpatel.in">
     <meta property="og:type" content="website">
+    
     <style>
         html {
             scroll-behavior: smooth;
-            /* Smooth scroll for anchor links */
         }
 
         .card {
-            /* Animate card transform, opacity, z-index, and shadow */
             transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1),
                 opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
                 z-index 500ms cubic-bezier(0.4, 0, 0.2, 1),
                 box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1);
         }
     </style>
-
 </head>
 
 <body>
@@ -92,16 +99,16 @@
                     style="perspective: 1200px; min-height: 350px;">
                     <div id="cardStack" class="relative w-full" style="perspective: 1000px;">
                         <a href="/solutions/control-system"
-                            class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-6"
-                            style="width: clamp(280px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(0px) scale(1); z-index: 30;">
+                            class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
+                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(0px) scale(1); z-index: 30;">
                             <img class="rounded w-full object-cover" width="600" height="400" loading="lazy"
                                 alt="Control System" style="height: clamp(100px, 25vw, 160px);" src="photos/c5.webp">
                             <h3 class="text-lg font-bold">Control System</h3>
                             <p class="text-gray-600 text-sm">Advanced automation and control system solutions.</p>
                         </a>
                         <a href="/solutions/embedded-circuit-design"
-                            class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-6"
-                            style="width: clamp(280px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(350px) scale(0.85); z-index: 20;">
+                            class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
+                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(350px) scale(0.85); z-index: 20;">
                             <img class="rounded w-full object-cover" width="600" height="400" loading="lazy"
                                 alt="Embedded & Circuit Design" style="height: clamp(100px, 25vw, 160px);"
                                 src="photos/c4.webp">
@@ -109,8 +116,8 @@
                             <p class="text-gray-600 text-sm">Custom embedded systems and circuit design.</p>
                         </a>
                         <a href="/solutions/training-documentation"
-                            class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-6"
-                            style="width: clamp(280px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(-350px) scale(0.85); z-index: 10;">
+                            class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
+                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(-350px) scale(0.85); z-index: 10;">
                             <img class="rounded w-full object-cover" width="600" height="400" loading="lazy"
                                 alt="Training & Documentation" style="height: clamp(100px, 25vw, 160px);"
                                 src="photos/c2.webp">
@@ -118,16 +125,16 @@
                             <p class="text-gray-600 text-sm">Comprehensive training and documentation.</p>
                         </a>
                         <a href="/solutions/3d-design"
-                            class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-6"
-                            style="width: clamp(280px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(450px) scale(0.8); z-index: 8;">
+                            class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
+                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(450px) scale(0.8); z-index: 8;">
                             <img class="rounded w-full object-cover" width="600" height="400" loading="lazy"
                                 alt="3D Design" style="height: clamp(100px, 25vw, 160px);" src="photos/c6.webp">
                             <h3 class="text-lg font-bold">3D Design</h3>
                             <p class="text-gray-600 text-sm">Professional 3D modeling and visualization.</p>
                         </a>
                         <a href="/solutions/webdevelopment"
-                            class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-6"
-                            style="width: clamp(280px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(-450px) scale(0.8); z-index: 6;">
+                            class="card absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded border border-gray-200 cursor-pointer transition-all duration-500 flex flex-col gap-2 p-4"
+                            style="width: clamp(260px, 90vw, 320px); transform: translateX(-50%) translateY(-50%) translateX(-450px) scale(0.8); z-index: 6;">
                             <img class="rounded w-full object-cover" width="600" height="400" loading="lazy"
                                 alt="Web Development" style="height: clamp(100px, 25vw, 160px);" src="photos/c3.webp">
                             <h3 class="text-lg font-bold">Web Development</h3>
