@@ -97,13 +97,13 @@ function getFooter() {
                     </p>
                 </div>
                 <div class="flex gap-4 text-lg">
-                    <a href="https://www.linkedin.com/in/dharm-patel-aa1a87212/" target="_blank" class="text-gray-600 hover:text-blue-600 transition">
+                    <a href="https://www.linkedin.com/in/dharm-patel-aa1a87212/"   aria-label="Visit my LinkedIn profile" target="_blank" class="text-gray-600 hover:text-blue-600 transition">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://instagram.com/dharm_patel_14" target="_blank" class="text-gray-600 hover:text-pink-500 transition">
+                    <a href="https://instagram.com/dharm_patel_14" aria-label="Visit my Instagram profile" target="_blank" class="text-gray-600 hover:text-pink-500 transition">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://github.com/DharmPatelPro" target="_blank" class="text-gray-600 hover:text-gray-900 transition">
+                    <a href="https://github.com/DharmPatelPro" aria-label="Visit my GitHub profile" target="_blank" class="text-gray-600 hover:text-gray-900 transition">
                         <i class="fab fa-github"></i>
                     </a>
                 </div>
