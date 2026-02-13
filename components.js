@@ -1,3 +1,12 @@
+// 1. AUTO-FIX: Inject the missing Icon Library (Font Awesome)
+// This makes <i class="fab fa-linkedin"></i> work again!
+(function loadIcons() {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css';
+    document.head.appendChild(link);
+})();
+
 // Reusable Header Component
 function getHeader() {
     return `
@@ -121,12 +130,12 @@ function getFooter() {
 function initializeHeaderFooter() {
     const headerPlaceholder = document.getElementById('app-header');
     const footerPlaceholder = document.getElementById('app-footer');
-    
+
     if (headerPlaceholder) {
         headerPlaceholder.innerHTML = getHeader();
         initMenuListeners();
     }
-    
+
     if (footerPlaceholder) {
         footerPlaceholder.innerHTML = getFooter();
     }
